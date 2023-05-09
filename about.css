@@ -12,7 +12,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: rgb(255, 255, 255);
+      background: rgb(0, 0, 0);
       width: 100%;
       height: 100%;
   }
@@ -63,7 +63,7 @@
   #menu-nav {
     max-width: 1000px;
     margin:  auto;
-    background-color: #1192b3;
+    background-color: #003f4e;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }

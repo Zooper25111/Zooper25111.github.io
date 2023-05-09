@@ -5,32 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Visual</title>
+    <title>Circle</title>
     <link rel="stylesheet" href="circle.css">
 </head>
 <body>
-   
+ 
+    
+    <audio id="player" controls="controls">
+      <source id="mp3_src" src="/teachings/2011_01_09_Cut.mp3" type="audio/mp3" />Your browser does not support the audio element.
+    </audio>
+
+
+    
     <div id='container'>
+        
         <div id="menu-nav">
+            
+           
+            </select>
             <div id="navigation-bar">
+                
               <ul>
                 <li><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
-                <li><a href="#"><i class="fa fa-handshake"></i><span>Services</span></a></li>
-                <li><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
                 <li><a href="contact.html"><i class="fa fa-book"></i><span>Contact</span></a></li>
                 <li><a href="visualizers.html"><i class="fa fa-rss"></i> <span>Visualizers</span></a></li>
               </ul>
+              
             </div>
         </div>
     
         <canvas id="canvas1"></canvas>
         
         <audio id="audio1" controls></audio>
-        
         <input type='file' id='fileupload' accept='audio/*' />
 
-</div>
+        <div class="container">
+            <div class="audio-visualizer"></div>
+            <!-- <select id="music-select">
+                
+              <option selected disabled>Select a song</option>
+              <option value="0">Jump -Van Halen</option>
+              <option value="1">Sweet Emotion -Aerosmith</option>
+              <option value="2">Song 3</option>
+              <option value="3">Song 4</option>
+            </select>
+          </div>
+           -->
+          <input accept='audio/*' type="button" value="Money -Pink Floyd" onclick="playMusic1()" id="musicButton" />
 
+</div>
+<input accept='audio/*' type="button" value="Meep Meep" onclick="playMusic1()" id="musicButton2" />
+<div><input accept='audio/*' type="button" value="Sweet Emotion -Aerosmith" onclick="playMusic1()" id="musicButton3" />
+</div>
     <script src="circle.js">
     function search(){
         var search = document.getElementById('search').value.toLowerCase();

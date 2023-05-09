@@ -11,9 +11,37 @@ ctx.shadowColor = 'black';
 let audioSource;
 let analyser;
 
-container.addEventListener('click', function(){
+let musicButton =document.getElementById('musicButton')
+musicButton.addEventListener('click', function(){
+const audio1 = document.getElementById('audio1');
+audio1.src = 'mon.mp4'
+const audioContext = new AudioContext();
+audio1.play();
+audioSource = audioContext.createMediaElementSource(audio1);
+analyser = audioContext.createAnalyser();
+audioSource.connect(analyser);
+analyser.connect(audioContext.destination);
+analyser.fftSize = 128;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+
+const barWidth = 15;
+let barHeight;
+let x;
+
+function animate(){
+    x = 0;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    analyser.getByteFrequencyData(dataArray);
+    drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray);
+    requestAnimationFrame(animate);
+}
+animate();
+});
+
+container.addEventListener('dblclick', function(){
     const audio1 = document.getElementById('audio1');
-    audio1.src = 'bad.mp3'
+    audio1.src = 'girl.mp4'
     const audioContext = new AudioContext();
     audio1.play();
     audioSource = audioContext.createMediaElementSource(audio1);
